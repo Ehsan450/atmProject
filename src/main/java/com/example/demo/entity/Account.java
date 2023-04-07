@@ -1,8 +1,10 @@
 package com.example.demo.entity;
 
+import com.example.demo.service.AtmService;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+import org.springframework.beans.factory.annotation.Autowired;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -15,6 +17,7 @@ import javax.persistence.Table;
 @Entity
 @Table(name = "accounts")
 public class Account {
+
     @Id
     @Column(name = "account_no")
     private String accountNumber;

@@ -17,7 +17,6 @@ import javax.persistence.Table;
 @Entity
 @Table(name = "accounts")
 public class Account {
-
     @Id
     @Column(name = "account_no")
     private String accountNumber;
@@ -27,6 +26,4 @@ public class Account {
 
     @Column(name = "balance")
     private double balance;
-
-
 }

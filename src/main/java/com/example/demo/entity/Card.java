@@ -21,5 +21,5 @@ public class Card {
 
     @ManyToOne
     @JoinColumn(name = "account_no")
-    private Account account_no;
+    private Account account;
 }

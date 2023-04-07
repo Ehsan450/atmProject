@@ -2,11 +2,8 @@ package com.example.demo.enumerator;
 
 public enum TransactionType {
     DEPOSIT ("Deposit"),
-
     WITHDRAW ("Withdraw"),
-
     TRANSFER ("Transfer");
-
     private final String value;
 
     TransactionType(String value) {

@@ -26,13 +26,14 @@ public class AtmController {
 
         return new ModelAndView("ATMForm");
     }
+
     @GetMapping("/mainpage")
-    public ModelAndView Home(){
+    public ModelAndView Home() {
         return new ModelAndView("MainPage");
     }
 
     @PostMapping("/")
-    public ModelAndView validate(@ModelAttribute Card card, Model model){
+    public ModelAndView validate(@ModelAttribute Card card, Model model) {
         boolean authenticated = this.atmService.validation(card.getCardNo(), card.getPin());
 
         if (authenticated) {
@@ -41,6 +42,30 @@ public class AtmController {
 
         model.addAttribute("message", "Incorrect Card/Pin");
         return new ModelAndView("ATMForm");
+    }
+
+    @PostMapping("/withdraw")
+    public void withdrawBalance(String cardNo, String pin, double amount) {
+        atmService.withdraw(cardNo, pin, amount);
+    }
+
+    @PostMapping("/deposit")
+    public void depositBalance(String cardNo, String pin, double amount) {
+        atmService.deposit(cardNo, pin, amount);
+
+    }
+
+    @PostMapping("/transfer")
+
+    public void transferBalance(String cardNo, String pin, String destAccount, double amount) {
+        atmService.transfer(cardNo, pin, destAccount, amount);
+
+    }
+
+    @GetMapping("/balance")
+    public double checkBalance(String cardNo, String pin) {
+
+        return atmService.checkBalance(cardNo, pin);
     }
 
 }

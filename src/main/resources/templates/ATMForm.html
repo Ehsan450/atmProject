@@ -7,9 +7,9 @@
 </head>
 <body style="background-color:powderblue;">
 
-<form>
+<form th:action="@{/validate}" th:object="${cardObject}" method="POST">
 
-<div th:align="" >
+<div  >
 
 
     <label for="CardNo"><b>CardNumber</b></label>

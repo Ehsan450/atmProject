@@ -22,4 +22,13 @@ public class Card {
     @ManyToOne
     @JoinColumn(name = "account_no")
     private Account account;
+
+    @Override
+    public String toString() {
+        return "Card{" +
+                "cardNo='" + cardNo + '\'' +
+                ", pin='" + pin + '\'' +
+                ", account=" + account +
+                '}';
+    }
 }

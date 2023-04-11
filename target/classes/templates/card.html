@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form th:action="@{/}" th:object="${addJobObject}" method="POST">
+    <input type="text" placeholder="Card Number"/>
+    <br>
+    <br>
+    <br>
+    <input type="text" placeholder="PIN"/>
+    <br>
+    <br>
+    <br>
+    <button type="submit"> Save </button>
+
+
+</form>
+
+</body>
+</html>

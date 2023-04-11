@@ -62,10 +62,13 @@ public class AtmController {
 
     }
 
-    @GetMapping("/balance")
-    public double checkBalance(String cardNo, String pin) {
+    @PostMapping("/balance")
+    public ModelAndView checkBalance(@ModelAttribute Card card, Model model) {
+        double bal = atmService.checkBalance(card.getCardNo(), card.getPin());
 
-        return atmService.checkBalance(cardNo, pin);
+        model.addAttribute("balance", bal);
+
+        return new ModelAndView("balance");
     }
 
 }

@@ -3,33 +3,52 @@
       xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
+    <link rel="stylesheet" th:href="@{/css/useful.css}" type="text/css">
     <title>Title</title>
 </head>
 
-<body style="background-color:powderblue;" >
+<body style="background-color:powderblue;">
 
 <div class="flex-box">
-    <H4 >
+    <h4 id="welcome" class="company">
         Welcome to ATM Booth
-    </H4>
+    </h4>
 
 
 </div>
 
 
-<div >
+<div id="actions_div">
+    <a th:href="@{/withdraw}"> Withdraw </a>
+    <br>
+    <br>
 
-    <label for="ATMOptions">Choose an Option:</label>
+    <a th:href="@{/deposit}"> Deposit </a>
 
-    <select id="ATMOptions" >
-        <optgroup label="Actions">
-            <option value="Withdraw">Withdraw </option>
-            <option value="Deposit">Deposit</option>
-            <option value="Transfer">Transfer</option>
-        </optgroup>
-        <optgroup label="Statements"/>
-        <option value="Check Balance">Balance</option>
-    </select>
+    <br>
+    <br>
+
+    <a th:href="@{/transfer}"> Transfer </a>
+
+    <br>
+    <br>
+
+    <a th:href="@{/balance}"> Balance </a>
+
+    <br>
+    <br>
+
+    <!--    <label for="ATMOptions">Choose an Option:</label>-->
+
+    <!--    <select id="ATMOptions" >-->
+    <!--        <optgroup label="Actions">-->
+    <!--            <option value="Withdraw">Withdraw </option>-->
+    <!--            <option value="Deposit">Deposit</option>-->
+    <!--            <option value="Transfer">Transfer</option>-->
+    <!--        </optgroup>-->
+    <!--        <optgroup label="Statements"/>-->
+    <!--        <option value="Check Balance">Balance</option>-->
+    <!--    </select>-->
 </div>
 
 </body>

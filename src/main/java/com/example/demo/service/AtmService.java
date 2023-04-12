@@ -18,18 +18,18 @@ public class AtmService {
     private CardRepository cardRepository;
     private TransactionRepository transactionRepository;
 
-    public boolean validation(String cardNo , String pin) {
-        Optional<Card> card = cardRepository.findById(cardNo);
-        if (card.isPresent()) {
-            Card fetchedCard = card.get();
-            if (fetchedCard.getPin().equals(pin)) {
-                return true;
-            }
-            throw new RuntimeException("PIN Incorrect");
-
-        }
-        throw new RuntimeException("Card Not Found");
-    }
+//    public boolean validation(String cardNo , String pin) {
+//        Optional<Card> card = cardRepository.findById(cardNo);
+//        if (card.isPresent()) {
+//            Card fetchedCard = card.get();
+//            if (fetchedCard.getPin().equals(pin)) {
+//                return true;
+//            }
+//            throw new RuntimeException("PIN Incorrect");
+//
+//        }
+//        throw new RuntimeException("Card Not Found");
+//    }
     public void withdraw(String cardNo, String pin, double amount) {
         Optional<Card> card = cardRepository.findById(cardNo);
 
